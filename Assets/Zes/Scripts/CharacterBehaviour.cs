@@ -54,12 +54,14 @@ public class CharacterBehaviour : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            enemy.GetComponent<CharacterBehaviour>().TakeDamage();
             Debug.Log("Enemy hit!");
         }
     }
 
     public void TakeDamage()
     {
+        health -= 50;
         animator.SetTrigger("damaged");
     }
 
