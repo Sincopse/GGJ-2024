@@ -335,7 +335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476, y: 0}
+  m_AnchoredPosition: {x: -475.99994, y: 0}
   m_SizeDelta: {x: -468, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320540962
@@ -351,14 +351,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23773581, g: 0.23773581, b: 0.23773581, a: 1}
+  m_Color: {r: 0.18490559, g: 0.18490559, b: 0.18490559, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fc81219557b8c94a8b2dd48a952af58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fec45b299980ed942bd814cb5b1d9d2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -387,6 +387,8 @@ GameObject:
   - component: {fileID: 371078616}
   - component: {fileID: 371078618}
   - component: {fileID: 371078617}
+  - component: {fileID: 371078619}
+  - component: {fileID: 371078620}
   m_Layer: 5
   m_Name: Emoji
   m_TagString: Untagged
@@ -410,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476, y: 0}
+  m_AnchoredPosition: {x: -475.99997, y: 9.999999}
   m_SizeDelta: {x: -488, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371078617
@@ -433,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fc81219557b8c94a8b2dd48a952af58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ac0b004892433a4ba6c93dd1826d680, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -451,6 +453,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371078615}
   m_CullTransparentMesh: 1
+--- !u!114 &371078619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371078615}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd06645840d30244953cf40b8ea9f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  Smile: {fileID: 21300000, guid: 5ac0b004892433a4ba6c93dd1826d680, type: 3}
+  Ok: {fileID: 21300000, guid: 64054a95ea0ff424fb03a4b9ee87a001, type: 3}
+  Neutral: {fileID: 21300000, guid: 8789ae33f97878b46813c741f953252b, type: 3}
+  Sad: {fileID: 21300000, guid: fec45b299980ed942bd814cb5b1d9d2b, type: 3}
+  healthBar: {fileID: 1351957572}
+--- !u!212 &371078620
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371078615}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &391623976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,6 +929,7 @@ GameObject:
   - component: {fileID: 1351957570}
   - component: {fileID: 1351957572}
   - component: {fileID: 1351957571}
+  - component: {fileID: 1351957573}
   m_Layer: 5
   m_Name: HPbar
   m_TagString: Untagged
@@ -993,6 +1067,25 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 935466981}
+--- !u!114 &1351957573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351957569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd06645840d30244953cf40b8ea9f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  Smile: {fileID: 21300000, guid: 5ac0b004892433a4ba6c93dd1826d680, type: 3}
+  Ok: {fileID: 21300000, guid: 64054a95ea0ff424fb03a4b9ee87a001, type: 3}
+  Neutral: {fileID: 21300000, guid: 8789ae33f97878b46813c741f953252b, type: 3}
+  Sad: {fileID: 21300000, guid: fec45b299980ed942bd814cb5b1d9d2b, type: 3}
+  healthBar: {fileID: 1351957572}
 --- !u!1 &1527974417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,31 +1178,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7619389622186883618, guid: bf342ab78078f1c409d127376df9743f, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1754603103}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf342ab78078f1c409d127376df9743f, type: 3}
 --- !u!1 &1754603095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7619389622186883618, guid: bf342ab78078f1c409d127376df9743f, type: 3}
   m_PrefabInstance: {fileID: 1754603094}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1754603103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754603095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dd06645840d30244953cf40b8ea9f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 0
-  healthBar: {fileID: 1351957572}
 --- !u!1 &2041017076
 GameObject:
   m_ObjectHideFlags: 0
