@@ -224,7 +224,6 @@ MonoBehaviour:
   hSpeed: 6
   vSpeed: 4
   canMove: 1
-  canFlip: 1
   animator: {fileID: 4810020986367049591}
   attackDamage: 40
   attackPoint: {fileID: 221423151964640975}
@@ -248,7 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterBehaviour: {fileID: 1116036160876712114}
-  animator: {fileID: 4810020986367049591}
   attackDelay: 0.6
 --- !u!50 &2694790462553807931
 Rigidbody2D:
@@ -449,7 +447,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2580eb8e67bf4b140b9d3485fd9c6a56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d1ef7dd16ab25d4abd2f839c65825a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

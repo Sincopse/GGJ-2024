@@ -6,8 +6,6 @@ public class PlayerInput : MonoBehaviour
 {
     public CharacterBehaviour characterBehaviour;
 
-    public Animator animator;
-
     Vector2 movement;
 
     public float attackDelay = 1.8f;
@@ -16,7 +14,6 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         nextAttackTime = attackDelay;
-        animator = GetComponent<Animator>();
         characterBehaviour = GetComponent<CharacterBehaviour>();
     }
 

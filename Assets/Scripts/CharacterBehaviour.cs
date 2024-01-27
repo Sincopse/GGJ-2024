@@ -11,7 +11,6 @@ public class CharacterBehaviour : MonoBehaviour
     public float hSpeed;
     public float vSpeed;
     public bool canMove = true;
-    public bool canFlip = true;
 
     public Animator animator;
 
@@ -41,7 +40,7 @@ public class CharacterBehaviour : MonoBehaviour
             animator.SetBool("isMoving", (hMove != 0 || vMove != 0));
 
             rb.velocity = new Vector2(hMove * hSpeed, vMove * vSpeed);
-            if (canFlip && (hMove > 0 && !facingRight || hMove < 0 && facingRight)) Flip();
+            if (hMove > 0 && !facingRight || hMove < 0 && facingRight) Flip();
         }
         else
         {

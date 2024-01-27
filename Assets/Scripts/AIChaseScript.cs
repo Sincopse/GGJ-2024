@@ -5,10 +5,21 @@ using UnityEngine;
 
 public class AIChaseScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public CharacterBehaviour characterBehaviour;
+
     public GameObject player;
     public float speed, speed2;
     private float distance;
+
+    public float attackDelay = 1.8f;
+    float nextAttackTime;
+
+    private void Awake()
+    {
+        nextAttackTime = attackDelay;
+        characterBehaviour = GetComponent<CharacterBehaviour>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,9 +37,17 @@ public class AIChaseScript : MonoBehaviour
         }
         if (distance < 3 && (transform.position.y - player.transform.position.y) < 0.1)
         {
-            //beat his ass
-            
-
+            if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
+            else
+            {
+                characterBehaviour.canMove = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    characterBehaviour.Attack();
+                    nextAttackTime = attackDelay;
+                    characterBehaviour.canMove = false;
+                }
+            }
         }
     }
 }
