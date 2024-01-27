@@ -10,6 +10,11 @@ public class PlayerInput : MonoBehaviour
 
     Vector2 movement;
 
+    public int attackDamage = 40;
+
+    public float attackRate = 1.8f;
+    float nextAttackTime = 0f;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -23,7 +28,14 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (Input.GetMouseButtonDown(0)) characterBehaviour.Attack();
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                characterBehaviour.Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
     }
 
     void FixedUpdate()

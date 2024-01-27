@@ -18,7 +18,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     bool facingRight = true; 
 
-    bool isAttacking;
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
@@ -47,7 +46,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void Attack()
     {
-        //canMove = false;
         animator.SetTrigger("attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, 0.2f), 0.0f, enemyLayer);
@@ -62,7 +60,13 @@ public class CharacterBehaviour : MonoBehaviour
     public void TakeDamage()
     {
         health -= 50;
-        animator.SetTrigger("damaged");
+        //animator.SetTrigger("damaged");
+    }
+
+    public void Die()
+    {
+        canMove = false;
+        animator.SetTrigger("die");
     }
 
     private void OnDrawGizmos()
