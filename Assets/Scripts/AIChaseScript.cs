@@ -23,7 +23,6 @@ public class AIChaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         distance = Vector2.Distance(transform.position, player.transform.position);
 
         Vector2 disY = new Vector2(this.transform.position.x, player.transform.position.y);
@@ -32,21 +31,14 @@ public class AIChaseScript : MonoBehaviour
         if (distance > 3)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-
-
         }
-        if (distance < 3 && (transform.position.y - player.transform.position.y) < 0.1)
+        if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
+        else
         {
-            if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
-            else
+            if (distance < 3 && (transform.position.y - player.transform.position.y) < 0.1)
             {
-                characterBehaviour.canMove = true;
-                if (Input.GetMouseButtonDown(0))
-                {
-                    characterBehaviour.Attack();
-                    nextAttackTime = attackDelay;
-                    characterBehaviour.canMove = false;
-                }
+                characterBehaviour.Attack();
+                nextAttackTime = attackDelay;
             }
         }
     }

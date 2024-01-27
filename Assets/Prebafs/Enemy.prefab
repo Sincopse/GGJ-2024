@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1262750717925232803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0.17, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,11 +227,12 @@ MonoBehaviour:
   animator: {fileID: 5363742294744653277}
   attackDamage: 25
   attackPoint: {fileID: 5668517059031424330}
-  attackRangeH: 0.2
-  attackRange: 1.1
+  attackRangeH: 0.5
+  attackRange: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+  attackDelay: 0.6
   attackSound: {fileID: 6471074283811566496}
   damageSound: {fileID: 8421485418552580670}
 --- !u!114 &2185025072133259986

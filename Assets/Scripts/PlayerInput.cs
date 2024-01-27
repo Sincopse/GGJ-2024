@@ -8,12 +8,8 @@ public class PlayerInput : MonoBehaviour
 
     Vector2 movement;
 
-    public float attackDelay = 1.8f;
-    float nextAttackTime;
-
     private void Awake()
     {
-        nextAttackTime = attackDelay;
         characterBehaviour = GetComponent<CharacterBehaviour>();
     }
 
@@ -24,16 +20,9 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
-        else
+        if (Input.GetMouseButtonDown(0))
         {
-            characterBehaviour.canMove = true;
-            if (Input.GetMouseButtonDown(0))
-            {
-                characterBehaviour.Attack();
-                nextAttackTime = attackDelay;
-                characterBehaviour.canMove = false;
-            }
+            characterBehaviour.Attack();
         }
     }
 

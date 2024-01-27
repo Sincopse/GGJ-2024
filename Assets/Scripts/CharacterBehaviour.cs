@@ -10,11 +10,12 @@ public class CharacterBehaviour : MonoBehaviour
 
     public float hSpeed;
     public float vSpeed;
-    public bool canMove = true;
+
+    bool canMove = true;
 
     public Animator animator;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     bool facingRight = true;
 
@@ -24,6 +25,9 @@ public class CharacterBehaviour : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
 
+    public float attackDelay = 1.8f;
+    float nextAttackTime = 0;
+
     public AudioSource attackSound;
     public AudioSource damageSound;
 
@@ -31,6 +35,13 @@ public class CharacterBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
+    }
+
+    private void Update()
+    {
+        // Ataack cooldown
+        if (nextAttackTime > -attackDelay + .3) nextAttackTime -= Time.deltaTime;
+        if (nextAttackTime <= 0.2) canMove = true;
     }
 
     public void Move(float hMove, float vMove)
@@ -51,27 +62,33 @@ public class CharacterBehaviour : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetTrigger("attack");
-        attackSound.Play();
-
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, attackRangeH), 0.0f, enemyLayer);
-
-        foreach (Collider2D enemy in hitEnemies)
+        if (nextAttackTime <= 0)
         {
-            enemy.GetComponent<CharacterBehaviour>().TakeDamage(attackDamage);
-            Debug.Log("Enemy hit!");
+            nextAttackTime += attackDelay;
+            canMove = false;
+            animator.SetTrigger("attack");
+            attackSound.Play();
+
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, attackRangeH), 0.0f, enemyLayer);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<CharacterBehaviour>().TakeDamage(attackDamage);
+                Debug.Log("Enemy hit!");
+            }
         }
     }
 
     void TakeDamage(int damage)
     {
+        nextAttackTime = attackDelay;
         damageSound.Play();
+        animator.SetTrigger("damaged");
         health -= damage;
         if (health <= 0)
         {
             Die();
         }
-        //animator.SetTrigger("damaged");
     }
 
     void Die()
