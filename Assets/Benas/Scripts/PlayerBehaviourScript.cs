@@ -22,11 +22,11 @@ public class PlayerBehaviourScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TakeDamage(10);
+            TakeDamageB(10);
         }
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamageB(int dmg)
     {
         health -= dmg;
         healthBar.SetHealth(health);
