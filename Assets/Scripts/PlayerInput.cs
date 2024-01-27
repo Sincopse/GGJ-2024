@@ -10,13 +10,12 @@ public class PlayerInput : MonoBehaviour
 
     Vector2 movement;
 
-    public int attackDamage = 40;
-
-    public float attackRate = 1.8f;
-    float nextAttackTime = 0f;
+    public float attackDelay = 1.8f;
+    float nextAttackTime;
 
     private void Awake()
     {
+        nextAttackTime = attackDelay;
         animator = GetComponent<Animator>();
         characterBehaviour = GetComponent<CharacterBehaviour>();
     }
@@ -28,12 +27,15 @@ public class PlayerInput : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        if (Time.time >= nextAttackTime)
+        if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
+        else
         {
+            characterBehaviour.canFlip = true;
             if (Input.GetMouseButtonDown(0))
             {
                 characterBehaviour.Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = attackDelay;
+                characterBehaviour.canFlip = false;
             }
         }
     }

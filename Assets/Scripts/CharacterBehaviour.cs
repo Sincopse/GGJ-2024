@@ -11,14 +11,17 @@ public class CharacterBehaviour : MonoBehaviour
     public float hSpeed;
     public float vSpeed;
     bool canMove = true;
+    public bool canFlip = true;
 
     public Animator animator;
 
     Rigidbody2D rb;
 
-    bool facingRight = true; 
+    bool facingRight = true;
 
+    public int attackDamage = 40;
     public Transform attackPoint;
+    public float attackRangeH = 0.2f;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
 
@@ -35,7 +38,7 @@ public class CharacterBehaviour : MonoBehaviour
             animator.SetBool("isMoving", (hMove != 0 || vMove != 0));
 
             rb.velocity = new Vector2(hMove * hSpeed, vMove * vSpeed);
-            if (hMove > 0 && !facingRight || hMove < 0 && facingRight) Flip();
+            if (canFlip && (hMove > 0 && !facingRight || hMove < 0 && facingRight)) Flip();
         }
         else
         {
@@ -48,32 +51,37 @@ public class CharacterBehaviour : MonoBehaviour
     {
         animator.SetTrigger("attack");
 
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, 0.2f), 0.0f, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, attackRangeH), 0.0f, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<CharacterBehaviour>().TakeDamage();
+            enemy.GetComponent<CharacterBehaviour>().TakeDamage(attackDamage);
             Debug.Log("Enemy hit!");
         }
     }
 
-    public void TakeDamage()
+    void TakeDamage(int damage)
     {
-        health -= 50;
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
         //animator.SetTrigger("damaged");
     }
 
-    public void Die()
+    void Die()
     {
         canMove = false;
-        animator.SetTrigger("die");
+        Destroy(gameObject);
+        //animator.SetTrigger("die");
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         if (attackPoint == null) return;
 
-        Gizmos.DrawWireCube(attackPoint.position, new Vector2(attackRange, 0.2f));
+        Gizmos.DrawWireCube(attackPoint.position, new Vector2(attackRange, attackRangeH));
     }
 
     void Flip()
