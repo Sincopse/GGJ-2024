@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public CharacterMovement characterMovement;
+    public CharacterBehaviour characterBehaviour;
+
+    public Animator animator;
 
     Vector2 movement;
 
     private void Awake()
     {
-        characterMovement = GetComponent<CharacterMovement>();
+        animator = GetComponent<Animator>();
+        characterBehaviour = GetComponent<CharacterBehaviour>();
     }
 
     // Update is called once per frame
@@ -18,12 +21,13 @@ public class PlayerInput : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
         movement.Normalize();
+
+        if (Input.GetMouseButtonDown(0)) characterBehaviour.Attack();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        characterMovement.Move(movement.x, movement.y);
+        characterBehaviour.Move(movement.x, movement.y);
     }
 }
