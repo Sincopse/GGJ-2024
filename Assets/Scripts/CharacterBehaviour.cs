@@ -10,7 +10,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     public float hSpeed;
     public float vSpeed;
-    bool canMove = true;
+    public bool canMove = true;
     public bool canFlip = true;
 
     public Animator animator;
@@ -24,6 +24,9 @@ public class CharacterBehaviour : MonoBehaviour
     public float attackRangeH = 0.2f;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
+
+    public AudioSource attackSound;
+    public AudioSource damageSound;
 
     private void Awake()
     {
@@ -50,6 +53,7 @@ public class CharacterBehaviour : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("attack");
+        attackSound.Play();
 
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRange, attackRangeH), 0.0f, enemyLayer);
 
@@ -62,6 +66,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     void TakeDamage(int damage)
     {
+        damageSound.Play();
         health -= damage;
         if (health <= 0)
         {

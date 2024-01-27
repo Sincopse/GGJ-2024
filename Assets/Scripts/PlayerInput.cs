@@ -30,12 +30,12 @@ public class PlayerInput : MonoBehaviour
         if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
         else
         {
-            characterBehaviour.canFlip = true;
+            characterBehaviour.canMove = true;
             if (Input.GetMouseButtonDown(0))
             {
                 characterBehaviour.Attack();
                 nextAttackTime = attackDelay;
-                characterBehaviour.canFlip = false;
+                characterBehaviour.canMove = false;
             }
         }
     }
