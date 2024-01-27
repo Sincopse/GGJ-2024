@@ -221,10 +221,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  hSpeed: 6
-  vSpeed: 4
-  canMove: 1
+  hSpeed: 2
+  vSpeed: 1
   animator: {fileID: 5363742294744653277}
+  rb: {fileID: 0}
   attackDamage: 25
   attackPoint: {fileID: 5668517059031424330}
   attackRangeH: 0.5
@@ -232,7 +232,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
-  attackDelay: 0.6
+  attackDelay: 1.5
   attackSound: {fileID: 6471074283811566496}
   damageSound: {fileID: 8421485418552580670}
 --- !u!114 &2185025072133259986
@@ -247,8 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b169e66257823664cae410352e87178a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterBehaviour: {fileID: 0}
-  player: {fileID: 0}
+  behaviour: {fileID: 0}
   speed: 3
   speed2: 1.5
   attackDelay: 1.8
@@ -453,7 +452,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e899bb1db235c4b4297d2dd3164d78e8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
