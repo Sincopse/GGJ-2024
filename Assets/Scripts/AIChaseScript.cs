@@ -35,15 +35,10 @@ public class AIChaseScript : MonoBehaviour
         float moveY = 0.0f;
         float moveX = 0.0f;
 
-        if (Mathf.Abs(disY) > 0.1)
-        {
-            moveY = disY < -0.1 ? 1 : disY > 0.1 ? -1 : 0;
-        }
-        else if (Mathf.Abs(disX) > 2)
-        {
-            moveX = disX < -0.1 ? 1 : disX > 0.1 ? -1 : 0;
-        }
-        else behaviour.Attack();
+        moveX = disX < -2 ? 1 : disX > 2 ? -1 : 0;
+        moveY = disY < -0.1 ? 1 : disY > 0.1 ? -1 : 0;
+
+        if (Mathf.Abs(disX) < 2 && Mathf.Abs(disY) < 0.1) behaviour.Attack();
 
 
         if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
