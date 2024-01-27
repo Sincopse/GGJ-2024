@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private CharacterMovement characterMovement;
-    float horizontalMove;
-    float verticalMove;
+    public CharacterMovement characterMovement;
+
+    Vector2 movement;
 
     private void Awake()
     {
@@ -16,12 +16,14 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        movement.Normalize();
     }
 
     private void FixedUpdate()
     {
-        characterMovement.Move(horizontalMove, verticalMove, false);
+        characterMovement.Move(movement.x, movement.y);
     }
 }

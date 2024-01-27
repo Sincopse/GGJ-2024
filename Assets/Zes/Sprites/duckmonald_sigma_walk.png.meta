@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 467e858ac35c58640a57dcc70de10227
+guid: a74f46dbe84fdd3408f9d0869d347a1c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_duckmoneld_0
+      name: duckmonald_sigma_walk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 22
+        width: 20
         height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81642ac5b10bda248ae4a17967e0a421
-      internalID: -40867883
+      spriteID: 2484c7d00db98474ca6096bbd119fa93
+      internalID: 565734347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_duckmoneld_1
+      name: duckmonald_sigma_walk_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
-        width: 22
+        width: 17
         height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -158,19 +158,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f31291fa0b195418e9170ed4eb0ad4
-      internalID: -355002841
+      spriteID: 4293ccf7dd424da49b5a5371058023af
+      internalID: -1637859956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_duckmoneld_2
+      name: duckmonald_sigma_walk_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 130
         y: 0
-        width: 22
+        width: 17
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7291acdf777581244b3093414ea70a0b
+      internalID: -2075004948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duckmonald_sigma_walk_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 18
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d82fe2bfc24b3a45937e741f60e7b13
+      internalID: -1411075708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duckmonald_sigma_walk_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 18
         height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -179,145 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8bb9637a9e47c640a5a87e5d3778786
-      internalID: -556209188
+      spriteID: 5ab9a7e11c0419543a00ff50b11c094a
+      internalID: 757468860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_duckmoneld_3
+      name: duckmonald_sigma_walk_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 322
         y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abae3c8790b940344892a234af1234f7
-      internalID: -2133107579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e289df23a5e7ab84c9e9d5e5dd030427
-      internalID: -153141795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cddd06feaf18a1b4487ed0604a3b3019
-      internalID: -1695657162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07bf9542c01cf29458efc290367b7ac9
-      internalID: 546128022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ed69bb00b163434c89aa4de8290fd5d
-      internalID: 425434206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 22
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cdbe0f06e3cb1b4ab8a69f63289be8b
-      internalID: -1572503798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_duckmoneld_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 22
+        width: 18
         height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -326,8 +242,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6826b999a0de5fa40a9f839bc2187983
-      internalID: 316978536
+      spriteID: 6fcfc5c07f14dfa41a8446ff0c2e43cd
+      internalID: 135777796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duckmonald_sigma_walk_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1
+        width: 17
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5af64d4ab08f043851035f1d74422b
+      internalID: 861853265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duckmonald_sigma_walk_7
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1
+        width: 18
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c0d219bd10e084c8ce9b82e87a443c
+      internalID: -1094883945
       vertices: []
       indices: 
       edges: []
@@ -343,16 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_duckmoneld_0: -40867883
-      idle_duckmoneld_1: -355002841
-      idle_duckmoneld_2: -556209188
-      idle_duckmoneld_3: -2133107579
-      idle_duckmoneld_4: -153141795
-      idle_duckmoneld_5: -1695657162
-      idle_duckmoneld_6: 546128022
-      idle_duckmoneld_7: 425434206
-      idle_duckmoneld_8: -1572503798
-      idle_duckmoneld_9: 316978536
+      duckmonald_sigma_walk_0: 565734347
+      duckmonald_sigma_walk_1: -1637859956
+      duckmonald_sigma_walk_2: -2075004948
+      duckmonald_sigma_walk_3: -1411075708
+      duckmonald_sigma_walk_4: 757468860
+      duckmonald_sigma_walk_5: 135777796
+      duckmonald_sigma_walk_6: 861853265
+      duckmonald_sigma_walk_7: -1094883945
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
