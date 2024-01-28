@@ -47,6 +47,7 @@ public class WaveTriggers : MonoBehaviour
         {
             Debug.Log("Player inside trigger!");
             StartBattle();
+            Destroy(gameObject);
         }
     }
 }

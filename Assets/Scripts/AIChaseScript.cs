@@ -38,7 +38,7 @@ public class AIChaseScript : MonoBehaviour
         if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
         else
         {
-            if (Mathf.Abs(disX) < distanceToAttack && Mathf.Abs(disY) < 0.1)
+            if (Mathf.Abs(disX) < distanceToAttack && Mathf.Abs(disY) < 0.3)
             {
                 behaviour.Attack();
                 nextAttackTime = attackDelay;

@@ -43,6 +43,15 @@ public class CharacterBehaviour : MonoBehaviour
         health = maxHealth;
     }
 
+    private void Start()
+    {
+        if (gameObject.CompareTag("Boss"))
+        {
+            var music = GameObject.FindGameObjectsWithTag("Respawn")[0];
+            Destroy(music);
+        }
+    }
+
     private void Update()
     {
         if (isDead) return;
@@ -101,11 +110,11 @@ public class CharacterBehaviour : MonoBehaviour
         animator.SetTrigger("damaged");
         health -= damage;
 
-        //if (gameObject.layer == 6)
-        //{
-        //    healthBarScript.SetHealth(health);
-        //    playerBehaviourScript.UpdateEmoji(health);
-        //}
+        if (gameObject.layer == 6)
+        {
+            healthBarScript.SetHealth(health);
+            playerBehaviourScript.UpdateEmoji(health);
+        }
 
         if (health <= 0) Die();
 

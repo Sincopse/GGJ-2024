@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -24,10 +25,20 @@ public class PlayerInput : MonoBehaviour
         {
             characterBehaviour.Attack();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
     }
 
     void FixedUpdate()
     {
         characterBehaviour.Move(movement.x, movement.y);
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
