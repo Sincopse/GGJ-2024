@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderTrigger : MonoBehaviour
+public class WaveTriggers : MonoBehaviour
 {
-    public List<Transform> childs = new List<Transform>();
+    List<Transform> childs = new List<Transform>();
 
     void Start()
     {

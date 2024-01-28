@@ -33,6 +33,8 @@ public class CharacterBehaviour : MonoBehaviour
     public AudioSource attackSound;
     public AudioSource damageSound;
 
+    public bool canStagger = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -91,7 +93,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        nextAttackTime = attackDelay;
+        if (canStagger) nextAttackTime += attackDelay / 4;
         damageSound.Play();
         animator.SetTrigger("damaged");
         health -= damage;
