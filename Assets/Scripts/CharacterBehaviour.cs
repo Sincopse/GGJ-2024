@@ -95,18 +95,17 @@ public class CharacterBehaviour : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        if (canStagger) nextAttackTime += attackDelay / 4;
+        if (!canStagger) nextAttackTime += attackDelay / 4;
+        else nextAttackTime += attackDelay;
         damageSound.Play();
         animator.SetTrigger("damaged");
         health -= damage;
 
-        if (gameObject.layer == 6)
-        {
-
-            healthBarScript.SetHealth(health);
-            playerBehaviourScript.UpdateEmoji(health);
-
-        }
+        //if (gameObject.layer == 6)
+        //{
+        //    healthBarScript.SetHealth(health);
+        //    playerBehaviourScript.UpdateEmoji(health);
+        //}
 
         if (health <= 0) Die();
 
@@ -116,12 +115,16 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isDead = true;
         canMove = false;
+        animator.SetBool("dead", true);
         if (gameObject.layer == 3)
         {
-            Destroy(gameObject);
-            return;
+            rb.MovePosition(new Vector2(rb.position.x, rb.position.y + 100));
+            Invoke("DestroyCharacter", 2);
         }
-        animator.SetBool("dead", true);
+    }
+
+    void DestroyCharacter() {
+        Destroy(gameObject);
     }
 
     void OnDrawGizmos()

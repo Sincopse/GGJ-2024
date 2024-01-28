@@ -224,7 +224,9 @@ MonoBehaviour:
   isDead: 0
   hSpeed: 2
   vSpeed: 1
+  healthBarScript: {fileID: 0}
   animator: {fileID: 5363742294744653277}
+  playerBehaviourScript: {fileID: 0}
   rb: {fileID: 0}
   attackDamage: 20
   attackPoint: {fileID: 5668517059031424330}
