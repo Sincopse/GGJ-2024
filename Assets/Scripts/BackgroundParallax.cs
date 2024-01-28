@@ -4,38 +4,25 @@ using UnityEngine;
 
 public class BackgroundParallax : MonoBehaviour
 {
-    //private float lenght, startpos;
-    //public GameObject cam;
-    //public float parallaxEffect;
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    startpos = transform.position.x;
-    //    lenght = GetComponent<SpriteRenderer>().bounds.size.x;
-    //}
-
-    //// Update is called once per frame
-    //void FixedUpdate()
-    //{
-    //    float distance = (cam.transform.position.x * parallaxEffect);
-
-    //    transform.position = new Vector3(startpos + distance, transform.position.y, transform.position.z);
-    //}
-
+    private float length, startpos;
     Camera cam;
+    public float parallaxEffect;
 
-    private void Start()
+    void Start()
     {
         cam = Camera.main;
+        startpos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     void Update()
     {
-        transform.position += new Vector3(-5 * Time.deltaTime, 0);
+        float temp = (cam.transform.position.x * (1 - parallaxEffect));
+        float dist = (cam.transform.position.x * parallaxEffect);
 
-        if (cam.transform.position.x - transform.position.x < -21.5)
-        {
-            transform.position = new Vector3(21.5f, transform.position.y);
-        }
+        transform.position = new Vector3(startpos + dist, transform.position.y);
+
+        if (temp > startpos + length) startpos += length;
+        else if (temp < startpos - length) startpos -= length;
     }
 }

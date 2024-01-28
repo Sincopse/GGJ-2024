@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89791f120e171f4c96a38b47a2e3c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffect: 0.7
 --- !u!1 &1519876650
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,14 +363,14 @@ Transform:
   m_GameObject: {fileID: 1519876650}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0147732245, y: -1.2, z: 0.05487919}
+  m_LocalPosition: {x: 0.0147732245, y: -0.17, z: -9.945121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1540778152}
   - {fileID: 1542654974}
   - {fileID: 990046690}
-  m_Father: {fileID: 1788132771}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540778151
 GameObject:
@@ -468,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89791f120e171f4c96a38b47a2e3c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffect: 0
 --- !u!1 &1542654973
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89791f120e171f4c96a38b47a2e3c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parallaxEffect: 0.5
 --- !u!4 &1579148970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3111502937983933758, guid: f37f232d514c1b04e8284d2e82590903, type: 3}
@@ -665,8 +668,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1519876651}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1788132772
@@ -752,3 +754,4 @@ SceneRoots:
   - {fileID: 1788132771}
   - {fileID: 39190952}
   - {fileID: 373029484}
+  - {fileID: 1519876651}
