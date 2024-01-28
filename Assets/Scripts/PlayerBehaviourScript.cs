@@ -62,10 +62,14 @@ public class PlayerBehaviourScript : MonoBehaviour
             Emoji = GetComponent<Image>();
             Emoji.sprite = Neutral;
         }
-        else if (health >= 0 && health < 25)
+        else if (health > 0 && health < 25)
         {
             Emoji = GetComponent<Image>();
             Emoji.sprite = Sad;
+        }
+        else if(health == 0)
+        {
+            Emoji.color = Color.red;
         }
     }
 
