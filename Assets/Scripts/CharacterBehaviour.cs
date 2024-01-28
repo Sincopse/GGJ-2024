@@ -103,7 +103,11 @@ public class CharacterBehaviour : MonoBehaviour
     {
         isDead = true;
         canMove = false;
-        //Destroy(gameObject);
+        if (gameObject.layer == 3)
+        {
+            Destroy(gameObject);
+            return;
+        }
         animator.SetBool("dead", true);
     }
 

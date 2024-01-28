@@ -26,6 +26,8 @@ public class AIChaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.GetComponent<CharacterBehaviour>().isDead) return;
+
         float disY = transform.position.y - player.transform.position.y;
         float disX = transform.position.x - player.transform.position.x;
 
