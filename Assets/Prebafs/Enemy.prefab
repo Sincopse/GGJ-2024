@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8423904061337547098}
   - component: {fileID: 5318899142158184558}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,13 +225,13 @@ MonoBehaviour:
   vSpeed: 1
   animator: {fileID: 5363742294744653277}
   rb: {fileID: 0}
-  attackDamage: 25
+  attackDamage: 20
   attackPoint: {fileID: 5668517059031424330}
   attackRangeH: 0.5
   attackRange: 2
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   attackDelay: 1.5
   attackSound: {fileID: 6471074283811566496}
   damageSound: {fileID: 8421485418552580670}

@@ -8,6 +8,8 @@ public class CharacterBehaviour : MonoBehaviour
     public int maxHealth = 100;
     int health;
 
+    public bool isDead = false;
+
     public float hSpeed;
     public float vSpeed;
 
@@ -39,6 +41,8 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         // Ataack cooldown
         if (nextAttackTime > -attackDelay + .3) nextAttackTime -= Time.deltaTime;
         if (nextAttackTime <= 0.2) canMove = true;
@@ -60,9 +64,15 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
     public void Attack()
     {
-        if (nextAttackTime <= 0)
+        if (nextAttackTime <= 0 && !isDead)
         {
             nextAttackTime += attackDelay;
             canMove = false;
@@ -85,17 +95,16 @@ public class CharacterBehaviour : MonoBehaviour
         damageSound.Play();
         animator.SetTrigger("damaged");
         health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
+
+        if (health <= 0) Die();
     }
 
     void Die()
     {
+        isDead = true;
         canMove = false;
-        Destroy(gameObject);
-        //animator.SetTrigger("die");
+        //Destroy(gameObject);
+        animator.SetBool("dead", true);
     }
 
     void OnDrawGizmos()
@@ -103,11 +112,5 @@ public class CharacterBehaviour : MonoBehaviour
         if (attackPoint == null) return;
 
         Gizmos.DrawWireCube(attackPoint.position, new Vector2(attackRange, attackRangeH));
-    }
-
-    void Flip()
-    {
-        facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
     }
 }

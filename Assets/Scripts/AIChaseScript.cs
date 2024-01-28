@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -25,26 +26,16 @@ public class AIChaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-
-        //Vector2 disY = new Vector2(this.transform.position.x, player.transform.position.y);
-
         float disY = transform.position.y - player.transform.position.y;
         float disX = transform.position.x - player.transform.position.x;
 
-        float moveY = 0.0f;
-        float moveX = 0.0f;
-
-        moveX = disX < -2 ? 1 : disX > 2 ? -1 : 0;
-        moveY = disY < -0.1 ? 1 : disY > 0.1 ? -1 : 0;
-
-        if (Mathf.Abs(disX) < 2 && Mathf.Abs(disY) < 0.1) behaviour.Attack();
-
+        float moveX = disX < -1.8 ? 1 : disX > 1.8 ? -1 : 0;
+        float moveY = disY < -0.1 ? 1 : disY > 0.1 ? -1 : 0;
 
         if (nextAttackTime > 0) nextAttackTime -= Time.deltaTime;
         else
         {
-            if (distance < 3 && (transform.position.y - player.transform.position.y) < 0.1)
+            if (Mathf.Abs(disX) < 2.2 && Mathf.Abs(disY) < 0.1)
             {
                 behaviour.Attack();
                 nextAttackTime = attackDelay;
