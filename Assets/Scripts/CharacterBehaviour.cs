@@ -15,7 +15,9 @@ public class CharacterBehaviour : MonoBehaviour
 
     bool canMove = true;
 
+    public HealthBarScript healthBarScript;
     public Animator animator;
+    public PlayerBehaviourScript playerBehaviourScript;
 
     public Rigidbody2D rb;
 
@@ -98,7 +100,16 @@ public class CharacterBehaviour : MonoBehaviour
         animator.SetTrigger("damaged");
         health -= damage;
 
+        if (gameObject.layer == 6)
+        {
+
+            healthBarScript.SetHealth(health);
+            playerBehaviourScript.UpdateEmoji(health);
+
+        }
+
         if (health <= 0) Die();
+
     }
 
     void Die()

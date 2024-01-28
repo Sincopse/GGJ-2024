@@ -10,7 +10,7 @@ public class PlayerBehaviourScript : MonoBehaviour
 {
 
     public int maxHealth;
-    public int health;
+    public int hp;
 
     public Sprite Smile;
     public Sprite Ok;
@@ -30,52 +30,43 @@ public class PlayerBehaviourScript : MonoBehaviour
 
     void SetHealthToMax()
     {
-        health = maxHealth;
+        hp = maxHealth;
         Emoji = GetComponent<Image>();
         Emoji.sprite = Smile;
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+    public void UpdateEmoji(int hp)
+    {   
+        if (hp > 75 && hp <= 100)
         {
-            SetHealthToMax();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamageB(10);
-            Debug.Log("Hello: " + health);
-        }
-        
-        if (health > 75 && health <= 100)
-        {
+            Emoji.color = Color.white;
             Emoji = GetComponent<Image>();
             Emoji.sprite = Smile;
         }
-        else if (health > 50 && health < 75)
+        else if (hp > 50 && hp < 75)
         {
             Emoji = GetComponent<Image>();
             Emoji.sprite = Ok;
         }
-        else if (health > 25 && health < 50)
+        else if (hp > 25 && hp < 50)
         {
             Emoji = GetComponent<Image>();
             Emoji.sprite = Neutral;
         }
-        else if (health > 0 && health < 25)
+        else if (hp > 0 && hp < 25)
         {
             Emoji = GetComponent<Image>();
             Emoji.sprite = Sad;
         }
-        else if(health == 0)
+        else if(hp == 0)
         {
             Emoji.color = Color.red;
         }
     }
 
-    public void TakeDamageB(int dmg)
+    public void TakeDamageB(int health)
     {
-        health -= dmg;
-        healthBar.SetHealth(health);
+        hp = health;
+        healthBar.SetHealth(hp);
     }
 }
